@@ -6,7 +6,7 @@ var scoresText = $("#scores-text");
 var leaderBoard = {};
 var currentQuestion = 0;
 var timer;
-var timeleft = 100;
+var timeleft = 60;
 var score = 0;
 
 //a list of quiz questions/answers that can be added to, the rest of the code adapts to the array length. The final numeric value is the index of the correct answer
