@@ -12,7 +12,7 @@ var score = 0;
 //a list of quiz questions/answers that can be added to, the rest of the code adapts to the array length. The final numeric value is the index of the correct answer
 var questions = 
 {
-    "Javascript is an _______ language?" : [["Object-Oriented", "Object Based", "Procedural", "None of the above"], 2],
+    "Javascript is an _______ language?" : [["Object-Oriented", "Object Based", "Procedural", "None of the above"], 1],
     "Which of the following keywords is used to define a variable in Javascript?" : [["var", "let", "A & B", "None of these"], 2],
     "Upon encountering empty statements, what does the Javascript Interpreter do?" : [["Throws an error", "Ignores the statements", "Gives a warning", "None of these"], 1],
     "How can a datatype be declared to be a constant type?" : [["Const", "Var", "let", "constant"], 0]
@@ -58,7 +58,7 @@ function quizComplete()
 
 //1 second tick, decrements the timer
 function tick()
-{
+{   
     if(timeleft > 0)
     {
         timeleft--; 
@@ -100,6 +100,8 @@ function checkAnswer(q, a)
     if (Object.values(questions)[currentQuestion][1] == a)
     {
         score++
+    } else {
+        timeleft = timeleft - 10
     }
 
     nextQuestion();
